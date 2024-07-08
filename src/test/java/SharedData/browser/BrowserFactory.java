@@ -25,7 +25,7 @@ public class BrowserFactory {
                 ChromeService chromeService = new ChromeService();
                 chromeService.openBrowser(browserData);
                 return chromeService.getWebDriver();
-            case "egde":
+            case "edge":
                 EdgeService edgeService = new EdgeService();
                 edgeService.openBrowser(browserData);
                 return edgeService.getWebDriver();
