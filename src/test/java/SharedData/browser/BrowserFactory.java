@@ -10,9 +10,9 @@ public class BrowserFactory {
     public WebDriver getBrowserInstance(){
         PropertyUtility propertyUtility = new PropertyUtility("atfData");
         Map<String,String> browserData = propertyUtility.getAllData();
-        String cicd = System.getProperty("cicd");
+        String cIcD = System.getProperty("cIcD");
         String browser = System.getProperty("broswer");
-        if (Boolean.parseBoolean(cicd)){
+        if (Boolean.parseBoolean(cIcD)){
             browserData.put("headless","--headless=new");
         }else{
             browser = browserData.get("browser");
