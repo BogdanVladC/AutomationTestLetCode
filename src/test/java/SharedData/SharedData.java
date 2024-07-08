@@ -1,6 +1,7 @@
 package SharedData;
 
 import LoggerUtillity.LoggerUtillity;
+import SharedData.browser.BrowserFactory;
 import org.checkerframework.checker.units.qual.C;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -17,13 +18,14 @@ public class SharedData extends LoggerUtillity {
 
     @BeforeMethod
     public void prepareDriver(){
-        testName = this.getClass().getSimpleName();
-        LoggerUtillity.startTestCase(testName);
-        LoggerUtillity.infoTest("The driver opened successfully");
-        webDriver = new ChromeDriver();
-        webDriver.get("https://letcode.in/test");
-        webDriver.manage().window().maximize();
-        webDriver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+//        testName = this.getClass().getSimpleName();
+//        LoggerUtillity.startTestCase(testName);
+//        LoggerUtillity.infoTest("The driver opened successfully");
+//        webDriver = new ChromeDriver();
+//        webDriver.get("https://letcode.in/test");
+//        webDriver.manage().window().maximize();
+//        webDriver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        webDriver = new BrowserFactory().getBrowserInstance();
     }
 //    @AfterMethod
 //    public void clearEnvironment(ITestResult result){
