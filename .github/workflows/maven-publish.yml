@@ -25,5 +25,4 @@ jobs:
         settings-path: ${{ github.workspace }} # location for the settings.xml file
 
     - name: Run Automation Tests
-      run: mvn clean install
-#      -DcIcD=true
+      run: mvn clean install -DcIcD=true
