@@ -1,8 +1,7 @@
-
 package SharedData.browser;
 
 import PropertyUtility.PropertyUtility;
-import lombok.Getter;
+import SharedData.SharedData;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -12,23 +11,24 @@ import org.openqa.selenium.edge.EdgeOptions;
 import java.time.Duration;
 import java.util.Map;
 
-@Getter
-
-public class EdgeService implements BrowserService{
-
+public class EdgeService implements BrowserService {
     private WebDriver webDriver;
-
     @Override
     public void openBrowser(Map<String,String>testData) {
-        EdgeOptions options = (EdgeOptions) getBrowserOptions(testData);
-        webDriver = new EdgeDriver(options);
-        webDriver.manage().window().maximize();
+        //aceasta metoda are ca scop sa deschida un chrome cu configurarile noastre
+
+        EdgeOptions options = (EdgeOptions) (testData);
+        webDriver= new EdgeDriver(options);
         webDriver.get(testData.get("url"));
+        webDriver.manage().window().maximize();
+        //wait inplicit
         webDriver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+
     }
 
     @Override
     public Object getBrowserOptions(Map<String, String> testData) {
+        //configuram optiunile pentru browserul nostru
         EdgeOptions edgeOptions = new EdgeOptions();
         edgeOptions.addArguments(testData.get("gpu"));
         edgeOptions.addArguments(testData.get("infobars"));
@@ -37,6 +37,11 @@ public class EdgeService implements BrowserService{
         if (!testData.get("headless").isEmpty()){
             edgeOptions.addArguments(testData.get("headless"));
         }
+
         return edgeOptions;
+    }
+
+    public WebDriver getWebDriver() {
+        return webDriver;
     }
 }

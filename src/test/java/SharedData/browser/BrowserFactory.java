@@ -3,10 +3,11 @@ package SharedData.browser;
 import PropertyUtility.PropertyUtility;
 import org.openqa.selenium.WebDriver;
 
-import java.util.HashMap;
 import java.util.Map;
 
 public class BrowserFactory {
+
+    //aplicam design paternul factory method ca sa definim un obiect care sa primeasca o instanta diferita de browser
     public WebDriver getBrowserInstance(){
         PropertyUtility propertyUtility = new PropertyUtility("atfData");
         Map<String,String> browserData = propertyUtility.getAllData();
@@ -17,8 +18,9 @@ public class BrowserFactory {
         }else{
             browser = browserData.get("browser");
         }
-        System.out.println("=================================");
-        System.out.println(browser);
+
+
+        //dupa ce am flat pe ce enviroment trebuie sa rulez deschid browserul dorit
 
         switch (browser){
             case "chrome":
@@ -32,4 +34,5 @@ public class BrowserFactory {
         }
         return null;
     }
+
 }

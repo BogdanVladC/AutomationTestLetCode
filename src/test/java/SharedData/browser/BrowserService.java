@@ -3,8 +3,10 @@ package SharedData.browser;
 import java.util.Map;
 
 public interface BrowserService {
-    void openBrowser(Map<String,String>testData);
+    //aceastea interfata are ca rol sa defineasca actiunile pe care le putem face un browser
 
-    Object getBrowserOptions(Map<String,String>testData);
+    void openBrowser(Map<String,String>testData);
+    Object getBrowserOptions(Map<String,String> testData);
+
 
 }
