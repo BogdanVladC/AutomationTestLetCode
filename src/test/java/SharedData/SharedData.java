@@ -25,7 +25,7 @@ public class SharedData extends LoggerUtillity {
 //        webDriver.get("https://letcode.in/test");
 //        webDriver.manage().window().maximize();
 //        webDriver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-        webDriver = new BrowserFactory().getBrowserInstance();
+       webDriver = new BrowserFactory().getBrowserInstance();
     }
 //    @AfterMethod
 //    public void clearEnvironment(ITestResult result){
