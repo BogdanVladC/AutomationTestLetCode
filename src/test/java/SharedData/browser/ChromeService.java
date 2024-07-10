@@ -33,6 +33,8 @@ public class ChromeService implements BrowserService{
         chromeOptions.addArguments(testData.get("infobars"));
         chromeOptions.addArguments(testData.get("extensions"));
         chromeOptions.addArguments(testData.get("sandbox"));
+        System.out.println("-----a adaugat proprietatile de pana acuma-----");
+        System.out.println(testData.get("headless"));
         if (!testData.get("headless").isEmpty()){
             System.out.println("-----vede ca headless exista si trebuie sa il seteze-----");
             chromeOptions.addArguments(testData.get("headless"));
