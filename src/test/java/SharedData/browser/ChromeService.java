@@ -27,14 +27,17 @@ public class ChromeService implements BrowserService{
     @Override
     public Object getBrowserOptions(Map<String, String> testData) {
         //configuram optiunile pentru browserul nostru
+        System.out.println("-----pregateste proprietatile-----");
         ChromeOptions chromeOptions = new ChromeOptions();
         chromeOptions.addArguments(testData.get("gpu"));
         chromeOptions.addArguments(testData.get("infobars"));
         chromeOptions.addArguments(testData.get("extensions"));
         chromeOptions.addArguments(testData.get("sandbox"));
         if (!testData.get("headless").isEmpty()){
+            System.out.println("-----vede ca headless exista si trebuie sa il seteze-----");
             chromeOptions.addArguments(testData.get("headless"));
         }
+        System.out.println("-----nu a intrat in if si nu are nevoie sa il seteze-----");
 
         return chromeOptions;
     }
