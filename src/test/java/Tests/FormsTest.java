@@ -5,9 +5,10 @@ import Pages.FormsPage;
 import Pages.HomePage;
 import PropertyUtility.PropertyUtility;
 import SharedData.SharedData;
+import SharedData.browser.Hooks;
 import org.testng.annotations.Test;
 
-public class FormsTest extends SharedData {
+public class FormsTest extends Hooks {
 
     @Test
     public void metodaTest(){

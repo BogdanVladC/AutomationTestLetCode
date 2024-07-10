@@ -4,6 +4,7 @@ import HelperMethods.ElementMethods;
 import Pages.ButtonPage;
 import Pages.HomePage;
 import SharedData.SharedData;
+import SharedData.browser.Hooks;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
@@ -14,7 +15,7 @@ import org.testng.annotations.Test;
 
 import javax.swing.*;
 
-public class ButtonTest extends SharedData {
+public class ButtonTest extends Hooks {
 
     @Test
     public void metodaTest() {
