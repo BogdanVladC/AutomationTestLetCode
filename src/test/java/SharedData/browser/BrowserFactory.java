@@ -11,12 +11,20 @@ public class BrowserFactory {
     public WebDriver getBrowserInstance(){
         PropertyUtility propertyUtility = new PropertyUtility("atfData");
         Map<String,String> browserData = propertyUtility.getAllData();
+        System.out.println("-----A luat toate datele din atf----");
+
         String cIcD = System.getProperty("cIcD");
         String browser = System.getProperty("browser");
+        System.out.println("-----A luat parametrii----");
+        System.out.println(cIcD);
+        System.out.println(browser);
+
         if (Boolean.parseBoolean(cIcD)){
             browserData.put("headless","--headless=new");
+            System.out.println("-----A intrat in if----");
         }else{
             browser = browserData.get("browser");
+            System.out.println("-----Nu a intrat in if----");
         }
 
 
@@ -25,7 +33,9 @@ public class BrowserFactory {
         switch (browser){
             case "chrome":
                 ChromeService chromeService = new ChromeService();
+                System.out.println("-----Tre sa deschida browser----");
                 chromeService.openBrowser(browserData);
+                System.out.println("-----A deschis browser----");
                 return chromeService.getWebDriver();
             case "edge":
                 EdgeService edgeService = new EdgeService();

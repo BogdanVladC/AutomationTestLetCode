@@ -18,6 +18,7 @@ public class SharedData {
 
     @BeforeMethod
     public void prepareDriver(){
+        System.out.println("-----A intrat in before method----");
        webDriver = new BrowserFactory().getBrowserInstance();
     }
     @AfterMethod
