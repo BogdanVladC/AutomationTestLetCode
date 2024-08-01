@@ -53,6 +53,12 @@ jobs:
       - name: Display Maven version
         run: mvn -version
 
+      - name: Print environment variables
+        run: env
+
+      - name: Print configuration files
+        run: cat path/to/your/configuration/file
+
       - name: Run Automation Tests
         run: mvn clean install -DcIcD=true -Dbrowser=${{ github.event.inputs.browser }} -DsuiteXmlFile=suites/${{ github.event.inputs.suite }} -PCustomSuite
         env:
